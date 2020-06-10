@@ -21,15 +21,19 @@ class MyApp extends StatelessWidget {
               Text(
                 'Adrian Kowalski',
                 style: TextStyle(
+                    fontFamily: 'MetalMania',
                     color: Colors.red,
                     fontWeight: FontWeight.bold,
                     fontSize: 15.0),
               ),
-              Container(
-                child: Center(
-                  child: ButtonBar(),
-                ),
-              )
+              Text(
+                'Flutter Developer',
+                style: TextStyle(
+                    fontFamily: 'Arial',
+                    color: Colors.red,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15.0),
+              ),
             ],
           ),
         ),
