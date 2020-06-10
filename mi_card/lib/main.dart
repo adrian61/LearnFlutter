@@ -30,9 +30,42 @@ class MyApp extends StatelessWidget {
                 'Flutter Developer',
                 style: TextStyle(
                     fontFamily: 'Piedra',
-                    color: Colors.red,
+                    color: Colors.red.shade200,
                     fontSize: 15.0),
               ),
+              Container(
+                color: Colors.green.shade400,
+                margin: EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
+                padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                child: Row(
+                  children: <Widget>[
+                    Icon(Icons.phone),
+                    SizedBox(width: 10),
+                    Text(
+                      '+48 123 456 789',
+                      style: TextStyle(
+                          fontFamily: 'Piedra', color: Colors.red.shade200),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 10.0),
+              Container(
+                color: Colors.green.shade400,
+                margin: EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
+                padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                child: Row(
+                  children: <Widget>[
+                    Icon(Icons.mail),
+                    SizedBox(width: 10),
+                    Text(
+                      'mail@address.com',
+                      style: TextStyle(
+                          fontFamily: 'Piedra', color: Colors.red.shade200),
+                    )
+                  ],
+                ),
+              )
             ],
           ),
         ),
