@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.redAccent,
         appBar: AppBar(
           title: Text('Dice App'),
         ),
@@ -22,11 +23,19 @@ class MyApp extends StatelessWidget {
 class DicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        Expanded(child: Image.asset('')),
-        Expanded(child: Image.asset('')),
-      ],
+    return Center(
+      child: Row(
+        children: <Widget>[
+          Expanded(child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Image.asset('images/dice1.png'),
+          )),
+          Expanded(child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Image.asset('images/dice2.png'),
+          )),
+        ],
+      ),
     );
   }
 }
