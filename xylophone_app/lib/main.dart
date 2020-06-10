@@ -30,9 +30,13 @@ class XylophoneApp extends StatelessWidget {
     return FlatButton(
         color: color,
         onPressed: () {
-          AudioCache player = AudioCache();
-          player.play('note$numberOfNote.wav');
+          playSound(numberOfNote);
         },
         child: Text(''));
+  }
+
+  void playSound(int numberOfNote) {
+    AudioCache player = AudioCache();
+    player.play('note$numberOfNote.wav');
   }
 }
