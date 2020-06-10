@@ -33,38 +33,28 @@ class MyApp extends StatelessWidget {
                     color: Colors.red.shade200,
                     fontSize: 15.0),
               ),
-              Container(
+              Card(
                 color: Colors.green.shade400,
-                margin: EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
-                padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
-                child: Row(
-                  children: <Widget>[
-                    Icon(Icons.phone),
-                    SizedBox(width: 10),
-                    Text(
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                child: ListTile(
+                    leading: Icon(Icons.phone),
+                    title: Text(
                       '+48 123 456 789',
                       style: TextStyle(
                           fontFamily: 'Piedra', color: Colors.red.shade200),
-                    )
-                  ],
-                ),
+                    )),
               ),
               SizedBox(height: 10.0),
-              Container(
+              Card(
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                 color: Colors.green.shade400,
-                margin: EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
-                padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
-                child: Row(
-                  children: <Widget>[
-                    Icon(Icons.mail),
-                    SizedBox(width: 10),
-                    Text(
+                child: ListTile(
+                    leading: Icon(Icons.mail),
+                    title: Text(
                       'mail@address.com',
                       style: TextStyle(
                           fontFamily: 'Piedra', color: Colors.red.shade200),
-                    )
-                  ],
-                ),
+                    )),
               )
             ],
           ),
