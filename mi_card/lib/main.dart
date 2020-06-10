@@ -12,9 +12,10 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: SafeArea(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               CircleAvatar(
-                radius: 50.0,
+                radius: 75.0,
                 backgroundImage: NetworkImage(
                     'http://www.hotavatars.com/wp-content/uploads/2019/01/I80W1Q0.png'),
               ),
@@ -24,14 +25,14 @@ class MyApp extends StatelessWidget {
                     fontFamily: 'MetalMania',
                     color: Colors.red,
                     fontWeight: FontWeight.bold,
-                    fontSize: 15.0),
+                    fontSize: 20.0),
               ),
               Text(
                 'Flutter Developer',
                 style: TextStyle(
                     fontFamily: 'Piedra',
                     color: Colors.red.shade200,
-                    fontSize: 15.0),
+                    fontSize: 25.0),
               ),
               Card(
                 color: Colors.green.shade400,
