@@ -12,14 +12,15 @@ class XylophoneApp extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            notePlayerButton(Colors.red, 1),
-            notePlayerButton(Colors.orange, 2),
-            notePlayerButton(Colors.yellow, 3),
-            notePlayerButton(Colors.green, 4),
-            notePlayerButton(Colors.greenAccent, 5),
-            notePlayerButton(Colors.blue, 6),
-            notePlayerButton(Colors.purple, 7)
+            Expanded(child: notePlayerButton(Colors.red, 1)),
+            Expanded(child: notePlayerButton(Colors.orange, 2)),
+            Expanded(child: notePlayerButton(Colors.yellow, 3)),
+            Expanded(child: notePlayerButton(Colors.green, 4)),
+            Expanded(child: notePlayerButton(Colors.greenAccent, 5)),
+            Expanded(child: notePlayerButton(Colors.blue, 6)),
+            Expanded(child: notePlayerButton(Colors.purple, 7)),
           ],
         ),
       ),
