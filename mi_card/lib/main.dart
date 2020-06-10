@@ -5,11 +5,19 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  Color _iconColor = Colors.white;
+  Color _textColor = Colors.white;
+  Color _dividerColor = Color(0xFFBDBDBD);
+  Color _primaryTextColor = Color(0xFF212121);
+  Color _secondaryTextColor = Color(0xFF757575);
+  Color _primaryColor = Color(0xFFE91E63);
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: _primaryColor,
         body: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -23,7 +31,7 @@ class MyApp extends StatelessWidget {
                 'Adrian Kowalski',
                 style: TextStyle(
                     fontFamily: 'MetalMania',
-                    color: Colors.red,
+                    color: _primaryTextColor,
                     fontWeight: FontWeight.bold,
                     fontSize: 20.0),
               ),
@@ -31,31 +39,44 @@ class MyApp extends StatelessWidget {
                 'Flutter Developer',
                 style: TextStyle(
                     fontFamily: 'Piedra',
-                    color: Colors.red.shade200,
+                    color: _secondaryTextColor,
                     fontSize: 25.0),
               ),
+              SizedBox(
+                width: 125,
+                child: Divider(
+                  height: 10,
+                  color: Colors.white,
+                  thickness: 1,
+                ),
+              ),
               Card(
                 color: Colors.green.shade400,
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 50.0),
                 child: ListTile(
-                    leading: Icon(Icons.phone),
+                    leading: Icon(
+                      Icons.phone,
+                      color: _iconColor,
+                    ),
                     title: Text(
                       '+48 123 456 789',
-                      style: TextStyle(
-                          fontFamily: 'Piedra', color: Colors.red.shade200),
+                      style: TextStyle(fontFamily: 'Piedra', color: _textColor),
                     )),
               ),
-              SizedBox(height: 10.0),
+              SizedBox(),
               Card(
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 50.0),
                 color: Colors.green.shade400,
                 child: ListTile(
-                    leading: Icon(Icons.mail),
-                    title: Text(
-                      'mail@address.com',
-                      style: TextStyle(
-                          fontFamily: 'Piedra', color: Colors.red.shade200),
-                    )),
+                  leading: Icon(
+                    Icons.mail,
+                    color: _iconColor,
+                  ),
+                  title: Text(
+                    'mail@address.com',
+                    style: TextStyle(fontFamily: 'Piedra', color: _textColor),
+                  ),
+                ),
               )
             ],
           ),
