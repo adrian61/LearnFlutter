@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quizzle/quiz_brain.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 QuizBrain quizBrain = QuizBrain();
 
@@ -44,6 +45,15 @@ class _QuizPageState extends State<QuizPage> {
     );
   }
 
+  _showAlert(context) {
+    Alert(
+            context: context,
+            type: AlertType.success,
+            title: "End of Quiz",
+            desc: "Do you want to reset quiz?")
+        .show();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -86,6 +96,10 @@ class _QuizPageState extends State<QuizPage> {
                   else
                     scoreIconList.add(iconFalse());
                   quizBrain.nextQuestion();
+                  if (quizBrain.isLastQuestion()) {
+                    _showAlert(context);
+                    scoreIconList.removeRange(0, scoreIconList.length);
+                  }
                 });
               },
             ),
@@ -110,6 +124,10 @@ class _QuizPageState extends State<QuizPage> {
                   else
                     scoreIconList.add(iconFalse());
                   quizBrain.nextQuestion();
+                  if (quizBrain.isLastQuestion()) {
+                    _showAlert(context);
+                    scoreIconList.removeRange(0, scoreIconList.length);
+                  }
                 });
               },
             ),

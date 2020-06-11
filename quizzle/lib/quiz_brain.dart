@@ -32,9 +32,6 @@ class QuizBrain {
 
   void nextQuestion() {
     _questionNumber++;
-    if (isLastQuestion()) {
-      _questionNumber = 0;
-    }
   }
 
   String getQuestion() {
@@ -55,7 +52,10 @@ class QuizBrain {
   }
 
   bool isLastQuestion() {
-    if (_questionNumber >= _getQuestionNumber()) return true;
+    if (_questionNumber >= _getQuestionNumber()) {
+      _questionNumber = 0;
+      return true;
+    }
     return false;
   }
 }
