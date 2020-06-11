@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:quizzle/question.dart';
+import 'package:quizzle/quiz_brain.dart';
+
+QuizBrain quizBrain = QuizBrain();
 
 void main() => runApp(Quizzler());
 
@@ -27,13 +31,6 @@ class QuizPage extends StatefulWidget {
 class _QuizPageState extends State<QuizPage> {
   List<Icon> scoreIconList = [];
 
-  List<String> questions = [
-    'You can lead a cow down stairs but not up stairs.',
-    'Approximately one quarter of human bones are in the feet.',
-    'A slug\'s blood is green.'
-  ];
-  List<bool> answers = [false, true, false];
-
   Icon iconTrue() {
     return Icon(
       Icons.check,
@@ -48,8 +45,6 @@ class _QuizPageState extends State<QuizPage> {
     );
   }
 
-  int numberOfQuestion = 1;
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -62,7 +57,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                questions[numberOfQuestion],
+                quizBrain.getQuestion(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -87,13 +82,11 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 setState(() {
-                  if (answers[numberOfQuestion] == true)
+                  if (quizBrain.getAnswer() == true)
                     scoreIconList.add(iconTrue());
                   else
                     scoreIconList.add(iconFalse());
-                  numberOfQuestion++;
-                  if (numberOfQuestion >= questions.length)
-                    numberOfQuestion = 0;
+                  quizBrain.nextQuestion();
                 });
               },
             ),
@@ -113,13 +106,11 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 setState(() {
-                  if (answers[numberOfQuestion] == false)
+                  if (quizBrain.getAnswer() == false)
                     scoreIconList.add(iconTrue());
                   else
                     scoreIconList.add(iconFalse());
-                  numberOfQuestion++;
-                  if (numberOfQuestion >= questions.length)
-                    numberOfQuestion = 0;
+                  quizBrain.nextQuestion();
                 });
               },
             ),
@@ -132,9 +123,3 @@ class _QuizPageState extends State<QuizPage> {
     );
   }
 }
-
-/*
-question1: 'You can lead a cow down stairs but not up stairs.', false,
-question2: 'Approximately one quarter of human bones are in the feet.', true,
-question3: 'A slug\'s blood is green.', true,
-*/
