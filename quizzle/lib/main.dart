@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quizzle/question.dart';
 import 'package:quizzle/quiz_brain.dart';
 
 QuizBrain quizBrain = QuizBrain();
@@ -82,7 +81,7 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 setState(() {
-                  if (quizBrain.getAnswer() == true)
+                  if (quizBrain.checkAnswer(true))
                     scoreIconList.add(iconTrue());
                   else
                     scoreIconList.add(iconFalse());
@@ -106,7 +105,7 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 setState(() {
-                  if (quizBrain.getAnswer() == false)
+                  if (quizBrain.checkAnswer(false))
                     scoreIconList.add(iconTrue());
                   else
                     scoreIconList.add(iconFalse());

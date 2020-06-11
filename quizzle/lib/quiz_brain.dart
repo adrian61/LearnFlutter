@@ -32,7 +32,7 @@ class QuizBrain {
 
   void nextQuestion() {
     _questionNumber++;
-    if (_questionNumber >= _getQuestionNumber()) {
+    if (isLastQuestion()) {
       _questionNumber = 0;
     }
   }
@@ -45,7 +45,17 @@ class QuizBrain {
     return _questionBank[_questionNumber].answer;
   }
 
+  bool checkAnswer(bool userAnswer) {
+    if (userAnswer == _questionBank[_questionNumber].answer) return true;
+    return false;
+  }
+
   int _getQuestionNumber() {
     return _questionBank.length;
+  }
+
+  bool isLastQuestion() {
+    if (_questionNumber >= _getQuestionNumber()) return true;
+    return false;
   }
 }
