@@ -20,25 +20,35 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: <Widget>[
                   Expanded(
-                    child: ReusableContainer(),
+                    child: ReusableContainer(
+                      color: Color(0xFF1D1E33),
+                    ),
                   ),
                   Expanded(
-                    child: ReusableContainer(),
+                    child: ReusableContainer(
+                      color: Color(0xFF1D1E33),
+                    ),
                   ),
                 ],
               ),
             ),
             Expanded(
-              child: ReusableContainer(),
+              child: ReusableContainer(
+                color: Color(0xFF1D1E33),
+              ),
             ),
             Expanded(
               child: Row(
                 children: <Widget>[
                   Expanded(
-                    child: ReusableContainer(),
+                    child: ReusableContainer(
+                      color: Color(0xFF1D1E33),
+                    ),
                   ),
                   Expanded(
-                    child: ReusableContainer(),
+                    child: ReusableContainer(
+                      color: Color(0xFF1D1E33),
+                    ),
                   ),
                 ],
               ),
