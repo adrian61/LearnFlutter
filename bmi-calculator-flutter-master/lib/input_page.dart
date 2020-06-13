@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'components/container_content.dart';
+import 'components/gender_enum.dart';
 import 'components/reusable_container.dart';
 
 class InputPage extends StatefulWidget {
@@ -32,7 +33,7 @@ class _InputPageState extends State<InputPage> {
                     child: GestureDetector(
                       onTap: () {
                         setState(() {
-                          updateColor(1);
+                          updateColor(Gender.male);
                         });
                       },
                       child: ReusableContainer(
@@ -45,7 +46,7 @@ class _InputPageState extends State<InputPage> {
                     child: GestureDetector(
                       onTap: () {
                         setState(() {
-                          updateColor(2);
+                          updateColor(Gender.female);
                         });
                       },
                       child: ReusableContainer(
@@ -88,16 +89,15 @@ class _InputPageState extends State<InputPage> {
         ));
   }
 
-  void updateColor(int gender) {
-    if (gender == 1) {
+  void updateColor(Gender gender) {
+    if (gender == Gender.male) {
       maleCardColor = activeContainerColor;
       if (femaleCardColor != inactiveContainerColor)
         femaleCardColor = inactiveContainerColor;
-    }
-    else if (gender == 2) {
+    } else if (gender == Gender.female) {
       femaleCardColor = activeContainerColor;
-        if (maleCardColor != inactiveContainerColor)
-          maleCardColor = inactiveContainerColor;
+      if (maleCardColor != inactiveContainerColor)
+        maleCardColor = inactiveContainerColor;
     }
   }
 }
